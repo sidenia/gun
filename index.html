@@ -137,6 +137,7 @@
           <li class="nav-item"><a class="nav-link text-dark" href="#inicio">Início</a></li>
           <li class="nav-item"><a class="nav-link text-dark" href="#sobre">Sobre</a></li>
           <li class="nav-item"><a class="nav-link text-dark" href="#depoimentos">Depoimentos</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#certificacoes">Certificações</a></li>
           <li class="nav-item"><a class="nav-link text-dark" href="#consultorio">Consultório</a></li>
           <li class="nav-item"><a class="nav-link text-dark" href="#blog">Blog</a></li>
           <li class="nav-item">
@@ -211,12 +212,40 @@
 
 
   <!-- Certificações -->
-  <!-- <section class="section" id="certificacoes">
-    <div class="container text-center">
-      <h2>Certificações</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <section class="section" id="certificacoes">
+    <div class="container">
+      <h2 class="text-center mb-5">Certificações e Formação</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+
+          <ul class="list-unstyled">
+            <li class="mb-4 d-flex align-items-start">
+              <i class="fas fa-user-graduate fa-lg text-secondary me-3 mt-1"></i>
+              <div>
+                <strong>2012–2017:</strong> Graduação em Medicina pela Faculdade de Medicina de Botucatu – <em>FMB/UNESP</em>
+              </div>
+            </li>
+
+            <li class="mb-4 d-flex align-items-start">
+              <i class="fas fa-stethoscope fa-lg text-secondary me-3 mt-1"></i>
+              <div>
+                <strong>2019–2021:</strong> Residência médica em Acupuntura pela Escola Paulista de Medicina – <em>EPM/UNIFESP</em>
+              </div>
+            </li>
+
+            <li class="mb-4 d-flex align-items-start">
+              <i class="fas fa-certificate fa-lg text-secondary me-3 mt-1"></i>
+              <div>
+                <strong>2021:</strong> Título de Especialista em Acupuntura pela <em>Associação Médica Brasileira (AMB)</em>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
     </div>
-  </section> -->
+  </section>
 
 
   <!-- Consultório -->
@@ -374,6 +403,24 @@
       const navbar = document.querySelector('.navbar');
       const trigger = document.querySelector('#sobre').offsetTop - navbar.offsetHeight;
       navbar.classList.toggle('scrolled', window.scrollY >= trigger);
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+      const navbarCollapse = document.getElementById('navbarNav');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 992) { // Apenas em dispositivos móveis
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
+          }
+        });
+      });
     });
   </script>
 
