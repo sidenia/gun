@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dra Mary Gun | Médica Acupunturista - CRM 191.845 | RQE 91.171</title>
+  
+  <!-- Bootstrap CSS (com preload opcional) -->
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"></noscript>
+
+  <!-- ícones -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS otimizado -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FFE1DF;
+      color: #43564f;
+    }
+
+    .navbar {
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar-brand, .nav-link {
+      color: #43564f !important;
+    }
+
+    .nav-link:hover {
+      color: #BF3781 !important;
+    }
+
+    .navbar.scrolled {
+      background-color: #ffe1df !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-custom {
+      background-color: #42534f;
+      color: #fff;
+      border-radius: 30px;
+      padding: 10px 25px;
+    }
+
+    .btn-custom:hover {
+      background-color: #459c7c;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background-color: #FFE1DF;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+
+    .hero.loaded {
+      opacity: 1;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255,255,255,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-overlay h1 { color: #BF3781; }
+    .hero-overlay p.lead { color: #3f3f3f; }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .card {
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h5, h2 { color: #43564f; font-weight: 500; }
+
+    footer {
+      background-color: #BF3781;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    p { font-weight: 300; }
+    blockquote { color: #3F3F3F; font-weight: 300; }
+    blockquote footer { background-color: transparent !important; color: #BF3781 !important; }
+
+    .depoimento-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    #consultorio { background-color: #f9f9f9; padding: 60px 0; }
+    .carousel-inner .carousel-item img {
+      object-fit: contain;
+      height: 60vh;
+      min-height: 300px;
+    }
+
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+      background-color: #BF3781;
+    }
+
+    /* cookies */
+    .cookie-consent {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      z-index: 9999;
+      max-width: 500px;
+      margin: auto;
+    }
+    .cookie-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .cookie-box p {
+      margin: 0;
+      flex: 1;
+      font-size: 0.95rem;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="cookieConsent" class="cookie-consent d-none">
+    <div class="cookie-box">
+      <p>Este site utiliza cookies para melhorar sua experiência. <a href="#politica">Saiba mais</a>.</p>
+      <div class="d-flex gap-2">
+        <button class="btn btn-sm btn-outline-secondary" id="btnRejeitarCookies">Rejeitar</button>
+        <button class="btn btn-sm btn-custom" id="btnAceitarCookies">Aceitar</button>
+      </div>
+    </div>
+  </div>  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-dark" href="./index.html">Dra Mary Gun</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="index.html">voltar</a>
+          </li>
+        </ul>        
+      </div>
+    </div>
+  </nav>
+
+  <!-- sessão políticas -->
+  <section id="politica" class="section bg-light" style="padding: 60px 20px;">
+    <div class="container">
+      <h2 class="text-center mb-4" style="color: #BF3781;">Política de Privacidade e Uso de Cookies</h2>
+
+      <p><strong>1. Introdução</strong><br>
+      Este site é operado por Dra. Mary Gun, e respeitamos sua privacidade. Esta política explica como usamos cookies e dados pessoais.</p>
+
+      <p><strong>2. Cookies</strong><br>
+      Utilizamos cookies para melhorar a experiência do usuário, lembrar preferências e coletar dados estatísticos anônimos. Você pode aceitar, rejeitar ou configurar esses cookies.</p>
+
+      <p><strong>3. Dados Coletados</strong><br>
+      Podemos coletar dados como nome, e-mail e telefone através de formulários, exclusivamente para contato e agendamento de consultas. Esses dados não são compartilhados com terceiros sem seu consentimento.</p>
+
+      <p><strong>4. Ferramentas de Terceiros</strong><br>
+      Podemos usar ferramentas como Google Analytics para entender como os visitantes utilizam o site, sempre respeitando o anonimato dos dados.</p>
+
+      <p><strong>5. Seus Direitos</strong><br>
+      De acordo com a LGPD (Lei Geral de Proteção de Dados), você pode solicitar acesso, correção ou exclusão de seus dados a qualquer momento através de nosso canal de contato.</p>
+
+      <p><strong>6. Contato</strong><br>
+      Para dúvidas sobre esta política, entre em contato conosco pelos nossos canais na sessão <a href="index.html#contato">contato</a>.
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <p>© 2025 Dra Mary Gun | Todos os direitos reservados</p>
+  </footer>
+
+  
+  <!-- Lazy Load Hero Image -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const hero = document.querySelector('.hero');
+      const img = new Image();
+      img.src = 'https://images.pexels.com/photos/6076122/pexels-photo-6076122.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260';
+      img.loading = 'eager';
+      img.onload = () => {
+        hero.style.backgroundImage = `url('${img.src}')`;
+        requestAnimationFrame(() => hero.classList.add('loaded'));
+      };
+    });
+  </script>
+
+  <!-- Navbar Scroll Effect -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      const trigger = document.querySelector('#sobre').offsetTop - navbar.offsetHeight;
+      navbar.classList.toggle('scrolled', window.scrollY >= trigger);
+    });
+  </script>
+
+  <!-- fecha navbar ao clicar - versao mobile -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const navItems = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .btn');
+      const navbarCollapse = document.getElementById('navbarNav');
+
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          if (window.innerWidth < 992) { // Apenas em dispositivos móveis
+            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+            if (bsCollapse) {
+              bsCollapse.hide();
+            }
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- cookies -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const consentBox = document.getElementById("cookieConsent");
+      const accepted = localStorage.getItem("cookieConsent");
+
+      if (!accepted) {
+        consentBox.classList.remove("d-none");
+      }
+
+      document.getElementById("btnAceitarCookies").addEventListener("click", () => {
+        localStorage.setItem("cookieConsent", "aceito");
+        consentBox.remove();
+      });
+
+      document.getElementById("btnRejeitarCookies").addEventListener("click", () => {
+        localStorage.setItem("cookieConsent", "rejeitado");
+        consentBox.remove();
+      });
+    });
+  </script>
+
+
+  <!-- Bootstrap Bundle JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
